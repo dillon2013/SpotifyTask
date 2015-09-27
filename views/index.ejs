@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="spotifyApp">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body ng-controller="mainCtrl">
+    
+    <div class="container">
+    	<h1><%= title %></h1>
+    	<div class="row">
+    		<div class="col-sm-4" style='margin-bottom:20px'>
+    			<input type="text" ng-model='search' placeholder='search albums'>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<span ng-repeat="item in data | filter:search">
+    			<div class="col-sm-1">
+	    			<img src="{{item.images[2].url}}" alt="">
+	    		</div>
+    			<div class="col-sm-3" style='height:85px'>
+	    			{{item.name}}
+	    		</div>
+	    	</span>
+    	</div>
+    </div>
+
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+  <script src="javascripts/script.js"></script>
+</html>
